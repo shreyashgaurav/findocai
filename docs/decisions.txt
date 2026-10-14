@@ -1,0 +1,28 @@
+Decision log
+
+Decisions tat I took:
+
+D1: Citation granularity for filings (8 Oct 2026)
+-Options: recover pages from the HTML's page-break markers; render the HTML to PDF; cite sections only.
+-Decision: recover pages from page-break markers and keep the `Item` section as metadata. Render to PDF only for filings without markers.
+-Why: retrieval metrics need page-level gold labels. With section-level labels, any chunk from a 15-page MD&A section counts as a hit, which inflates Recall@5.
+
+D10: Generator (5 Oct 2026)
+-Options: Gemini; GPT-4o.
+-Decision: Gemini, Flash-class.
+-Why: Flash-class pricing keeps repeated evaluation runs cheap, and it accepts images, which the multimodal milestones need.
+
+D11: Text embedder (8 Oct 2026)
+-Options: all-MiniLM-L6-v2; bge-small-en-v1.5.
+-Decision: bge-small-en-v1.5.
+-Why: MiniLM truncates input at 256 tokens, so dense retrieval would never see the second half of a 512-token chunk. bge-small keeps the same 384 dimensions and reads 512 tokens.
+
+D12: Repository (8 Oct 2026)
+-Options: keep `multimodal-rag`; rename to `findocai`.
+-Decision: rename, and keep the history: the prototype is tagged `v0-prototype` and removed in one commit.
+-Why: A better name. the name matches the project, and GitHub redirects the old URL, so existing links keep working.
+
+D13: Python version (14 Oct 2026)
+-Options: requires-python = ">=3.12" (uv's default); 3.12 only.
+-Decision: 3.12 only (>=3.12,<3.13), with the interpreter managed by uv.
+-Why: uv's lockfile resolves dependencies for every Python version the project allows. The app runs on exactly one interpreter, the one in its Docker image, and ML libraries often lag new Python releases.

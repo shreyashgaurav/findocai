@@ -1,0 +1,17 @@
+[project]
+name = "findocai"
+version = "0.1.0"
+description = "Multimodal RAG over SEC filings and earnings decks, with page-level citations"
+readme = "README.md"
+authors = [
+    { name = "Shreyash Gaurav", email = "shreyash2856@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.scripts]
+findocai = "findocai:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"

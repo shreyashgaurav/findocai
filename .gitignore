@@ -1,0 +1,16 @@
+#Python
+__pycache__/
+.venv/
+
+#Tool caches
+.ruff_cache/
+.pytest_cache/
+
+#Secrets as real keys live only in .env
+.env
+
+#Corpus files, indexes and page images are never committed (SRS NFR-LEG-020)
+data/
+
+#Created when Windows copies files into WSL - Not used as of now
+*:Zone.Identifier

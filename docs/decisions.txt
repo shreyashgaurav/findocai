@@ -10,7 +10,10 @@ D1: Citation granularity for filings (8 Oct 2026)
 D10: Generator (5 Oct 2026)
 -Options: Gemini; GPT-4o.
 -Decision: Gemini, Flash-class.
--Why: Flash-class pricing keeps repeated evaluation runs cheap, and it accepts images, which the multimodal milestones need.
+-Why: Flash-class pricing keeps repeated evaluation runs cheap, and it accepts images, which the multimodal milestones need.- 14 Oct 2026: free tier is 5 requests/min, 250K tokens/min, 20 requests/day per model.
+  gemini-3.8-flash and gemini-3.6-flash returned 503 UNAVAILABLE (high demand); gemini-2.5-flash worked.
+  Pin deferred to M1.5, the first step that calls the model. Target: gemini-3.8-flash.
+- Open: 20 requests/day cannot support evaluation runs. I have two options: billed model or local model.
 
 D11: Text embedder (8 Oct 2026)
 -Options: all-MiniLM-L6-v2; bge-small-en-v1.5.

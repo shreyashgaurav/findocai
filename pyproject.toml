@@ -7,7 +7,9 @@ authors = [
     { name = "Shreyash Gaurav", email = "shreyash2856@gmail.com" }
 ]
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "google-genai>=2.30.1",
+]
 
 [project.scripts]
 findocai = "findocai:main"

@@ -1,0 +1,33 @@
+# Corpus manifest: the documents FinDocAI indexes.
+# The files themselves live in data/raw/ and are never committed.
+corpus_version: v0
+description: >
+  M1 corpus: one issuer, one 10-Q and the matching earnings deck.
+
+documents:
+  - doc_key: nvda-10q-fy27q2
+    company: NVDA
+    source_type: edgar_filing
+    form_type: 10-Q
+    fiscal_year: 2027
+    fiscal_quarter: 2
+    period_end_date: 2026-07-26
+    source_url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm
+    accession_number: "0001045810-26-000075"
+    local_path: data/raw/nvda-10q-fy27q2.htm
+    sha256: "2379ff2b3606fcbb8427606927d312607807fedcef53a54766994f3615a854e5"
+    retrieved_at: 2026-10-14T18:30:41Z
+    page_method: page_breaks
+
+  - doc_key: nvda-deck-fy27q2
+    company: NVDA
+    source_type: earnings_deck
+    form_type: presentation
+    fiscal_year: 2027
+    fiscal_quarter: 2
+    period_end_date: 2026-07-26
+    source_url: https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/NVDA-F2Q27-Quarterly-Presentation-final-1.pdf
+    local_path: data/raw/nvda-deck-fy27q2.pdf
+    sha256: "09ab4748a56475e25b20ad3decdd5e50d46531449f5778b508a7663bc4ed212e"
+    retrieved_at: 2026-10-14T18:31:33Z
+    page_method: pdf

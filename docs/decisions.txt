@@ -7,6 +7,21 @@ D1: Citation granularity for filings (8 Oct 2026)
 -Decision: recover pages from page-break markers and keep the `Item` section as metadata. Render to PDF only for filings without markers.
 -Why: retrieval metrics need page-level gold labels. With section-level labels, any chunk from a 15-page MD&A section counts as a hit, which inflates Recall@5.
 
+
+D2: First company (15 Oct 2026)
+- Options: NVIDIA; AMD.
+- Decision: NVIDIA, Q2 fiscal 2027 (quarter ended 26 Jul 2026): the 10-Q (accession 0001045810-26-000075) and the quarterly presentation.
+- Why: publishes a presentation with each 10-Q; a recent quarter, so the model likely hasn't seen the figures (C5 will measure it); its late-January fiscal year makes cross-company period questions meaningful once AMD joins in M3.
+
+Premise check (16 Oct 2026)
+- 10-Q: 42 page breaks across 43 pages. D1 confirmed: pages come from page breaks.
+- Deck: chart numbers are real text, not pictures, but each chart's caption comes after its numbers in the extracted text. Read top-down, page 5 pairs "GAAP" with the non-GAAP margins, and page 8 pairs "Free Cash Flow" with capital return (checked against page 14 and page 8's own summary line).
+- Labels: pages 5 and 8 present_unattributable; page 14 (table) attributable by row and column order.
+- Implication: finding NVIDIA's chart pages should be easy; reading them is the hard part. Early evidence for M6's page-image config (C1p) over M7's late interaction on this deck. At M3, check whether AMD's charts are pictures.
+
+
+
+
 D10: Generator (5 Oct 2026)
 -Options: Gemini; GPT-4o.
 -Decision: Gemini, Flash-class.

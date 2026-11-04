@@ -15,10 +15,12 @@ D2: First company (15 Oct 2026)
 
 Premise check (16 Oct 2026)
 - 10-Q: 42 page breaks across 43 pages. D1 confirmed: pages come from page breaks.
-- Deck: chart numbers are real text, not pictures, but each chart's caption comes after its numbers in the extracted text. Read top-down, page 5 pairs "GAAP" with the non-GAAP margins, and page 8 pairs "Free Cash Flow" with capital return (checked against page 14 and page 8's own summary line).
-- Labels: pages 5 and 8 present_unattributable; page 14 (table) attributable by row and column order.
-- Implication: finding NVIDIA's chart pages should be easy; reading them is the hard part. Early evidence for M6's page-image config (C1p) over M7's late interaction on this deck. At M3, check whether AMD's charts are pictures.
-
+- Deck: every number shown on slides 5, 8, 14 and 16 is in the text layer; none is picture-only.
+- Side-by-side charts lose their structure: on slide 5 the captions "GAAP" and "Non-GAAP" sit above the charts, but the text layer lists each caption after its numbers (drawing order, not layout), so a top-down reader pairs "GAAP" with the non-GAAP margins. Slide 8 does the same with free cash flow and capital return.
+- Tables (slides 14, 16) come out row by row in column order: attributable by position.
+- Slide 8's dividends/buybacks split is unlabelled (bar heights only); only the 10-Q has it.
+- Labels: slides 5 and 8 present_unattributable; slides 14 and 16 attributable.
+- Implication: finding NVIDIA's chart slides is easy; reading side-by-side charts is the hard part. Early evidence for M6's page-image config (C1p) over M7 on this deck. At M3, check whether AMD's charts are pictures.
 
 
 

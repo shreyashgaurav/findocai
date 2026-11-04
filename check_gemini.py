@@ -5,7 +5,7 @@ client = genai.Client()
 #     if (model.name and "flash" in model.name) and "generateContent" in (model.supported_actions or []):
 #         print(" ", model.name)
 
-MODEL = "gemini-3.6-flash"
+MODEL = "gemini-3.8-flash"
 
 response = client.models.generate_content(
     model=MODEL,

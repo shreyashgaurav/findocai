@@ -12,6 +12,8 @@ dependencies = [
     "google-genai>=2.30.1",
     "lxml>=6.1.3",
     "pymupdf>=2.1",
+    "sentence-transformers",
+    "torch",
 ]
 
 [project.scripts]
@@ -28,3 +30,14 @@ dev = [
 
 [tool.ruff.lint]
 extend-select = ["I", "UP", "B"]
+
+
+# Get PyTorch from its CPU-only index - as I have no GPU
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true  
+#use this index only for packages pointed at it (torch)

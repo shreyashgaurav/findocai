@@ -8,7 +8,7 @@ Multimodal retrieval-augmented generation (RAG) over SEC filings and earnings de
 
 | Milestone | What it delivers | Status |
 |---|---|---|
-| M1 | Deployed RAG over one company's 10-Q and earnings deck, with page citations and baseline metrics | In progress |
+| M1 | Deployed RAG over one company's 10-Q and earnings deck, with page citations and baseline metrics | Done |
 | M2 | Multimodal retrieval: slides retrieved as images, click-through citations | Planned |
 | M3 | Compliant EDGAR acquisition for two companies; filtering by company and fiscal period | Planned |
 | M4 | Full evaluation: 40-question gold set, per-category metrics, no-retrieval control | Planned |

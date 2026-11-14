@@ -3,8 +3,7 @@ from sentence_transformers import SentenceTransformer
 
 
 from findocai.chunk import MODEL_NAME #MODEL_NAME = "BAAI/bge-small-en-v1.5"
-model = SentenceTransformer(MODEL_NAME)
-
+model = SentenceTransformer(MODEL_NAME) #130 MB downloaded
 def embed(texts):
     vector = model.encode(
         texts,

@@ -19,7 +19,7 @@ def split_long_line(line):
     ]
     pieces = []
     step = CHUNK_TOKENS - OVERLAP_TOKENS
-    for start in range(0, len(offsets), len(offsets)):
+    for start in range(0, len(offsets), step):
         end = min(start + CHUNK_TOKENS, len(offsets))
         pieces.append(line[offsets[start][0] : offsets[end - 1][1]])
         if end == len(offsets):

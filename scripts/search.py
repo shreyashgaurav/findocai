@@ -1,10 +1,9 @@
-
 """Search the index from the command line.
 Usage: uv run python scripts/search.py "your question"
 """
 
-
 import sys
+
 from findocai.retrieve import retrieve
 
 question = sys.argv[1]

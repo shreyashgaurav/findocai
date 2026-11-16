@@ -3,10 +3,11 @@ from google.genai import types
 from pydantic import BaseModel
 
 from findocai.retrieve import retrieve
+from findocai.retry import with_retries
 
 MODEL = "gemini-3.8-flash"
 
-client = genai.Client()
+client = genai.Client(http_options=types.HttpOptions(timeout=60_000))
 
 SYSTEM_PROMPT = """You answer questions about company financial documents.
 
@@ -39,7 +40,8 @@ def ask(question):
     hits = retrieve(question)
     prompt = f"source:\n{format_sources(hits)}\n\nQuestion:{question}"
 
-    response = client.models.generate_content(
+    response = with_retries(
+        client.models.generate_content,
         model=MODEL,
         contents=prompt,
         config=types.GenerateContentConfig(

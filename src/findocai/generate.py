@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from findocai.retrieve import retrieve
 from findocai.retry import with_retries
 
-MODEL = "gemini-3.8-flash"
+MODEL = "gemini-2.5-flash"
 
 client = genai.Client(http_options=types.HttpOptions(timeout=60_000))
 
